@@ -44,5 +44,28 @@ public class Switching {
 
         Alert alert = driver.switchTo().alert();
         alert.accept();
+
+        driver.close();
     }
+
+    @Test
+    public void modalTest() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver",
+                "C:\\Users\\ASHISH REDDY\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://formy-project.herokuapp.com/modal");
+
+        WebElement modalElement = driver.findElement(By.id("modal-button"));
+        modalElement.click();
+
+        Thread.sleep(1000);
+        WebElement modalElement1 = driver.findElement(By.id("close-button"));
+        modalElement1.click();
+
+        driver.close();
+    }
+
+
 }

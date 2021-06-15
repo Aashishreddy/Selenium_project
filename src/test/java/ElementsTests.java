@@ -84,6 +84,12 @@ public class ElementsTests {
         driver.close();
     }
 
+    /* ****Drag and DROP
+            Actions action = new Actions(driver);
+            action.draganddrop(element1, element2).build().perform();
+
+     */
+
     @Test
     public void autocompleteTest() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver",
