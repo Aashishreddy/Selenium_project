@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,12 +20,14 @@ public class ElementsTests {
         driver.get("https://formy-project.herokuapp.com/scroll");
 
         WebElement nameElement = driver.findElement(By.id("name"));
-//       Actions action = new Actions();
-////        action.move
+        Actions action = new Actions(driver);
+        action.moveToElement(nameElement);
         nameElement.sendKeys("Aashish Reddy");
-//
+
         WebElement dateElement = driver.findElement(By.id("date"));
         dateElement.sendKeys("07/14/2021");
+
+        driver.close();
     }
 
     @Test
@@ -59,6 +62,7 @@ public class ElementsTests {
 
         element.submit();
 
+        driver.close();
     }
 
     @Test
@@ -76,6 +80,8 @@ public class ElementsTests {
 
         WebElement elementButton = driver.findElement(By.id("button"));
         element.click();
+
+        driver.close();
     }
 
     @Test
@@ -93,7 +99,9 @@ public class ElementsTests {
         WebElement autocompleteResult = driver.findElement(By.className("pac-item"));
         autocompleteResult.click();
 
+        driver.close();
     }
 
 
 }
+    
