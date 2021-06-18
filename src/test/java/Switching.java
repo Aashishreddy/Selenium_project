@@ -67,5 +67,4 @@ public class Switching {
         driver.close();
     }
 
-
 }
